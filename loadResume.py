@@ -14,11 +14,11 @@ def extract_sections_from_pdf(pdf_path):
         'Contact Information': ['Contact Information', 'Contact Details', 'Personal Information'],
         'Summary': ['Summary', 'Professional Summary', 'Profile'],
         'Objective': ['Objective', 'Career Objective', 'Professional Goal'],
-        'Experience': ['Experience', 'Work Experience', 'Professional Experience'],
-        'Education': ['Education', 'Academic Background', 'Qualifications'],
+        'Experience': ['EXPERIENCE', 'Experience', 'Work Experience', 'Professional Experience'],
+        'Education': ['EDUCATION'. 'Education', 'Academic Background', 'Qualifications'],
         'Skills': ['Skills', 'Core Competencies', 'Expertise'],
         'Certifications': ['Certifications', 'Certifications & Licenses', 'Credentials'],
-        'Projects': ['Projects', 'Project Experience', 'Significant Projects'],
+        'Projects': ['PROJECTS', 'Projects', 'Project Experience', 'Significant Projects'],
         'Languages': ['Languages', 'Language Skills', 'Language Proficiency'],
         'Awards': ['Awards', 'Honors', 'Achievements'],
         'Volunteer Experience': ['Volunteer Experience', 'Volunteering', 'Community Service'],
@@ -45,7 +45,7 @@ def extract_sections_from_pdf(pdf_path):
             # Identify the section based on heading text
             identified = False
             for heading, synonyms in section_synonyms.items():
-                if any(block_text.startswith(synonym) for synonym in synonyms):
+                if any(block_text.lower().startswith(synonym.lower()) for synonym in synonyms):
                     current_section = heading
                     if current_section not in sections:
                         sections[current_section] = ''

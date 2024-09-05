@@ -3,6 +3,6 @@ python-dotenv
 langchain
 langchain_community
 transformers
-huggingface-hub==0.15.0
+huggingface-hub
 sentence-transformers==2.2.2
 PyMuPDF

@@ -3,7 +3,8 @@ import os
 from datetime import datetime
 
 def extract_sections_from_pdf(pdf_path):
-    doc = fitz.open(pdf_path)
+    doc = fitz.open(stream=pdf_path.read(), filetype="pdf")
+    # doc = fitz.open(pdf_path)
     sections = {}
     current_section = None
     candidate_name = None

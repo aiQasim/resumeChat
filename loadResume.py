@@ -50,8 +50,8 @@ def extract_sections_from_pdf(pdf_path):
                 if any(block_text.lower().startswith(synonym.lower()) for synonym in synonyms):
                     current_section = heading
                     print("heading", heading)
-                    # if current_section not in sections:
-                    #     sections[current_section] = ''
+                    if current_section not in sections:
+                        sections[current_section] = ''
                     oldSection = False
                     break
             if oldSection and current_section:

@@ -44,16 +44,16 @@ def extract_sections_from_pdf(pdf_path):
                 candidate_name = extract_candidate_name(block_text)
 
             # Identify the section based on heading text
-            identified = False
+            newSection = False
             for heading, synonyms in section_synonyms.items():
                 if any(block_text.lower().startswith(synonym.lower()) for synonym in synonyms):
                     current_section = heading
                     print("heading", heading)
-                    if current_section not in sections:
-                        sections[current_section] = ''
-                    identified = True
+                    # if current_section not in sections:
+                    #     sections[current_section] = ''
+                    newSection = True
                     break
-            if identified and current_section:
+            if not newSection and current_section:
                 # Append text to the current section
                 sections[current_section] += block_text + '\n'
     

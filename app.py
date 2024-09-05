@@ -2,6 +2,8 @@ import streamlit as st
 import re
 from dotenv import load_dotenv
 
+from htmlTemplates import css, bot_template, user_template, hide_st_style, footer
+
 from langchain_community.document_loaders import TextLoader
 from langchain_community.embeddings import HuggingFaceEmbeddings
 from langchain_community.llms import HuggingFaceHub
@@ -88,7 +90,7 @@ def main():
                 else:
                     st.write("Please ask about one of the following sections: Education, Work, Research, Skills.")
 
-            # st.markdown(hide_st_style, unsafe_allow_html=True)
+            st.markdown(hide_st_style, unsafe_allow_html=True)
             st.markdown(footer, unsafe_allow_html=True)
 
 

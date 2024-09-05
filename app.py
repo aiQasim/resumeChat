@@ -24,8 +24,8 @@ if uploaded_file is not None:
         st.error("The file size exceeds the maximum limit of 1 MB. Please upload a smaller file.")
     else:
         # Extract resume text from uploaded PDF
-        candidate_name, sections = extract_sections_from_pdf(pdf_file)
-        last_modified_date = get_last_modified_date(pdf_file)
+        candidate_name, sections = extract_sections_from_pdf(uploaded_file)
+        last_modified_date = get_last_modified_date(uploaded_file)
 
         # resume_text = extract_text_from_pdf(uploaded_file)
         

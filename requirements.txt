@@ -1,6 +1,7 @@
 streamlit
 pdfplumber
 langchain
+langchain_community
 transformers
 sentence-transformers==2.2.2
 PyMuPDF

@@ -47,6 +47,7 @@ def extract_sections_from_pdf(pdf_path):
             for heading, synonyms in section_synonyms.items():
                 if any(block_text.lower().startswith(synonym.lower()) for synonym in synonyms):
                     current_section = heading
+                    print("heading", heading)
                     if current_section not in sections:
                         sections[current_section] = ''
                     identified = True

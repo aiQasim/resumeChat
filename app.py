@@ -38,7 +38,12 @@ def main():
             
             # Split the resume into sections (Education, Work, Research, Skills)
             # sections = split_into_sections(resume_text)
-            
+
+            print("candidate_name")
+            print(candidate_name)
+            print("sections")
+            print(sections)
+
             st.write("Resume Sections Extracted:")
             for section, content in sections.items():
                 st.subheader(section)
@@ -53,13 +58,17 @@ def main():
                 texts = text_splitter.split_text(content)
                 embedded_sections[section] = embeddings.embed_documents(texts)
     
+            print("embedded_sections done")
+
             # Load a pre-trained question-answering model (DistilBERT fine-tuned on SQuAD)
             #llm = HuggingFaceHub(repo_id="distilbert-base-uncased-distilled-squad", model_kwargs={"temperature": 0})
             llm = HuggingFaceHub(repo_id="microsoft/layoutlmv2-base-uncased", model_kwargs={"temperature": 0})
             
+            print("llm done")
     
             # Create the QA chain
             qa_chain = load_qa_chain(llm, chain_type="stuff")
+            print("qa_chain done")
     
             # Ask a question to the chatbot
             user_question = st.text_input("Ask a question about your resume (e.g., 'What is my work experience?' or 'Tell me about my research'):")

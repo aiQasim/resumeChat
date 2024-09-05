@@ -63,8 +63,8 @@ def main():
             print("embedded_sections done")
 
             # Load a pre-trained question-answering model (DistilBERT fine-tuned on SQuAD)
-            #llm = HuggingFaceHub(repo_id="distilbert-base-uncased-distilled-squad", model_kwargs={"temperature": 0})
-            llm = HuggingFaceHub(repo_id="google/flan-t5-base", model_kwargs={"temperature": 0})
+            llm = HuggingFaceHub(repo_id="distilbert-base-uncased-distilled-squad", model_kwargs={"temperature": 0})
+            # llm = HuggingFaceHub(repo_id="google/flan-t5-base", model_kwargs={"temperature": 0})
             
             print("llm done")
     

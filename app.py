@@ -91,7 +91,7 @@ def main():
     
                 if relevant_section:
                     st.write(f"Searching the {relevant_section} section for an answer...")
-                    answer = question_answerer({'question': question, 'context': rawText_sections[relevant_section]})
+                    answer = question_answerer({'question': user_question, 'context': rawText_sections[relevant_section]})
                     #result = qa_chain.run(input_documents=embedded_sections[relevant_section], question=user_question)
                     st.write("Answer:", answer)
                 else:

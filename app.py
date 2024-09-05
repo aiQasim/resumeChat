@@ -49,8 +49,10 @@ def main():
             print(sections)
 
             st.write("Resume Sections Extracted:")
+            rawText_sections = {}
             for section, content in sections.items():
                 st.subheader(section)
+                rawText_sections[section] = content
                 st.text_area(f"{section} Section", content, height=150)
             
             # Load and split the resume text for each section
@@ -89,7 +91,7 @@ def main():
     
                 if relevant_section:
                     st.write(f"Searching the {relevant_section} section for an answer...")
-                    answer = question_answerer({'question': question, 'context': raw_text})
+                    answer = question_answerer({'question': question, 'context': rawText_sections[relevant_section]})
                     #result = qa_chain.run(input_documents=embedded_sections[relevant_section], question=user_question)
                     st.write("Answer:", answer)
                 else:

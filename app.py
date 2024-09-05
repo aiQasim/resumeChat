@@ -48,7 +48,7 @@ if uploaded_file is not None:
 
         # Load a pre-trained question-answering model (DistilBERT fine-tuned on SQuAD)
         #llm = HuggingFaceHub(repo_id="distilbert-base-uncased-distilled-squad", model_kwargs={"temperature": 0})
-        llm = HuggingFaceHub(repo_id="distilbert/distilbert-base-uncased-distilled-squad", model_kwargs={"temperature": 0})
+        llm = HuggingFaceHub(repo_id="impira/layoutlm-document-qa", model_kwargs={"temperature": 0})
         
 
         # Create the QA chain

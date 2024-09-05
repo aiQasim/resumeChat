@@ -1,11 +1,11 @@
 import streamlit as st
 import pdfplumber
 import re
-from langchain.document_loaders import TextLoader
-from langchain.text_splitter import RecursiveCharacterTextSplitter
-from langchain.embeddings import HuggingFaceEmbeddings
+from langchain_community.document_loaders import TextLoader
+from langchain_community.text_splitter import RecursiveCharacterTextSplitter
+from langchain_community.embeddings import HuggingFaceEmbeddings
 from langchain.chains.question_answering import load_qa_chain
-from langchain.llms import HuggingFaceHub
+from langchain_community.llms import HuggingFaceHub
 from loadResume import *
 
 # Streamlit UI setup

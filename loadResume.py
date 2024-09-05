@@ -15,7 +15,7 @@ def extract_sections_from_pdf(pdf_path):
         'Summary': ['Summary', 'Professional Summary', 'Profile'],
         'Objective': ['Objective', 'Career Objective', 'Professional Goal'],
         'Experience': ['EXPERIENCE', 'Experience', 'Work Experience', 'Professional Experience'],
-        'Education': ['EDUCATION'. 'Education', 'Academic Background', 'Qualifications'],
+        'Education': ['EDUCATION', 'Education', 'Academic Background', 'Qualifications'],
         'Skills': ['Skills', 'Core Competencies', 'Expertise'],
         'Certifications': ['Certifications', 'Certifications & Licenses', 'Credentials'],
         'Projects': ['PROJECTS', 'Projects', 'Project Experience', 'Significant Projects'],

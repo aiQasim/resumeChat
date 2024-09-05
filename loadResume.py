@@ -32,6 +32,7 @@ def extract_sections_from_pdf(pdf_path):
     for page_num in range(len(doc)):
         page = doc.load_page(page_num)
         blocks = page.get_text("blocks")
+        print("blocks:" , blocks)
         
         for block in blocks:
             block_text = block[4].strip()  # Extract the text part of the block

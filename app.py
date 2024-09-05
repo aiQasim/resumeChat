@@ -4,6 +4,8 @@ from dotenv import load_dotenv
 
 from htmlTemplates import css, bot_template, user_template, hide_st_style, footer
 
+from transformers import pipeline
+
 from langchain_community.document_loaders import TextLoader
 from langchain_community.embeddings import HuggingFaceEmbeddings
 from langchain_community.llms import HuggingFaceHub
@@ -71,7 +73,9 @@ def main():
             # Create the QA chain
             qa_chain = load_qa_chain(llm, chain_type="stuff")
             print("qa_chain done")
-    
+
+            question_answerer = pipeline('question-answering')
+            
             # Ask a question to the chatbot
             user_question = st.text_input("Ask a question about your resume (e.g., 'What is my work experience?' or 'Tell me about my research'):")
     
@@ -85,8 +89,9 @@ def main():
     
                 if relevant_section:
                     st.write(f"Searching the {relevant_section} section for an answer...")
-                    result = qa_chain.run(input_documents=embedded_sections[relevant_section], question=user_question)
-                    st.write("Answer:", result)
+                    answer = question_answerer({'question': question, 'context': raw_text})
+                    #result = qa_chain.run(input_documents=embedded_sections[relevant_section], question=user_question)
+                    st.write("Answer:", answer)
                 else:
                     st.write("Please ask about one of the following sections: Education, Work, Research, Skills.")
 

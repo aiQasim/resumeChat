@@ -88,7 +88,7 @@ def main():
                 else:
                     st.write("Please ask about one of the following sections: Education, Work, Research, Skills.")
 
-            st.markdown(hide_st_style, unsafe_allow_html=True)
+            # st.markdown(hide_st_style, unsafe_allow_html=True)
             st.markdown(footer, unsafe_allow_html=True)
 
 

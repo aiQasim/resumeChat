@@ -1,5 +1,6 @@
 import streamlit as st
 import re
+from dotenv import load_dotenv
 
 from langchain_community.document_loaders import TextLoader
 from langchain_community.embeddings import HuggingFaceEmbeddings

@@ -76,7 +76,9 @@ def main():
             qa_chain = load_qa_chain(llm, chain_type="stuff")
             print("qa_chain done")
 
-            question_answerer = pipeline('question-answering')
+            #question_answerer = pipeline('question-answering')
+            
+            question_answerer = pipeline("document-question-answering", model="microsoft/layoutlmv2-base-uncased")
             
             # Ask a question to the chatbot
             user_question = st.text_input("Ask a question about your resume (e.g., 'What is my work experience?' or 'Tell me about my research'):")
